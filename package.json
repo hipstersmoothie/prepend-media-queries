@@ -1,7 +1,17 @@
 {
   "name": "extract-media-queries",
   "version": "1.0.0",
-  "description": "",
+  "description": "Strips out all media queries based on user provided breakpoints and prepends all effected classes with a breakpoint specific wrapper.",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "webpack-loader",
+    "webpack",
+    "media",
+    "@media",
+    "media-query"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +21,14 @@
     "postcss-plugin.js",
     "webpack-loader.js"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Andrew Lisowski",
+  "homepage": "https://github.com/hipstersmoothie/extract-media-queries",
+  "repository": "hipstersmoothie/extract-media-queries",
+  "bugs": {
+		"url": "https://github.com/hipstersmoothie/extract-media-queries/issues"
+	},
+  "license": "MIT",
+  "repository": "",
   "dependencies": {
     "loader-utils": "^1.1.0",
     "postcss": "^6.0.14"
