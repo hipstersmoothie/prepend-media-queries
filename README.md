@@ -55,17 +55,15 @@ For the plugin to work you must specify the breakpoints for the media queries yo
         {
             wrapper: '.base',
             includeBaseStyles: true,
-            match: RegExp(
+            match:
                 `\\(max-width:[ \t]+350px\\)|` +
                 `\\(max-width:[ \t]+767px\\)|` +
-            ),
         },
         {
             wrapper: '.small',
-            match: RegExp(
+            match:
                 `\\(min-width:[ \t]+350px\\)|` +
                 `\\(max-width:[ \t]+766px\\)`
-            ),
         },
         {
             wrapper: '.medium',
