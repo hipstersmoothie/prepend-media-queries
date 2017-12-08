@@ -9,7 +9,7 @@
   "main": "transform.js",
   "files": [
     "postcss-plugin.js",
-    "webpack-plugin.js"
+    "webpack-loader.js"
   ],
   "author": "",
   "license": "ISC",
