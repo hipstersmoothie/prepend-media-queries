@@ -6,6 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "transform.js",
+  "files": [
+    "postcss-plugin.js",
+    "webpack-plugin.js"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "postcss": "^6.0.14"
+  }
 }
