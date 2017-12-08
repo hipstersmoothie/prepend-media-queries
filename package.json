@@ -12,25 +12,28 @@
     "@media",
     "media-query"
   ],
-  "main": "index.js",
   "scripts": {
+    "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "transform.js",
-  "files": [
-    "postcss-plugin.js",
-    "webpack-loader.js"
-  ],
   "author": "Andrew Lisowski",
   "homepage": "https://github.com/hipstersmoothie/extract-media-queries",
-  "repository": "hipstersmoothie/extract-media-queries",
-  "bugs": {
-		"url": "https://github.com/hipstersmoothie/extract-media-queries/issues"
-	},
-  "license": "MIT",
   "repository": "",
+  "bugs": {
+    "url": "https://github.com/hipstersmoothie/extract-media-queries/issues"
+  },
+  "license": "MIT",
   "dependencies": {
     "loader-utils": "^1.1.0",
     "postcss": "^6.0.14"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "babel": {
+    "presets": ["es2015"]
   }
 }

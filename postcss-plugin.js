@@ -1,6 +1,19 @@
-const postcss = require('postcss');
-const transform = require('./transform');
+'use strict';
 
-module.exports = postcss.plugin('remove-media-queries', opts => (
-    transform(opts.breakPoints)
-));
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _postcss = require('postcss');
+
+var _postcss2 = _interopRequireDefault(_postcss);
+
+var _transform = require('./transform');
+
+var _transform2 = _interopRequireDefault(_transform);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _postcss2.default.plugin('remove-media-queries', function (opts) {
+    return (0, _transform2.default)(opts.breakPoints);
+});

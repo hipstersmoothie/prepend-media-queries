@@ -5,7 +5,7 @@ Strips out all media queries based on user provided breakpoints and prepends all
 ## Installation
 
 ```console
-$ npm i extract-media-queries --saveDev
+$ npm i extract-media-queries --save-dev
 ```
 
 
