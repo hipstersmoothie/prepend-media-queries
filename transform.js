@@ -22,7 +22,7 @@ function processBreakpoint(breakPoint, css) {
     css.walkAtRules((rule) => {
         if (rule.name.match(/^media/) && rule.params.match(breakPoint.match)) {
             rule.nodes.map(node => prependSelectors(breakPoint.wrapper, node));
-            css.append(rule.nodes);
+            rule.parent.insertBefore(rule, rule.nodes);
             rule.remove();
         }
     });
