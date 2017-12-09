@@ -36,3 +36,4 @@ function transformMediaQueries(file) {
         cb(null, endFile);
     });
 }
+module.exports = exports['default'];

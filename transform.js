@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.prependSelectors = prependSelectors;
 exports.processBreakpoint = processBreakpoint;
-exports.default = processAll;
 function prependSelectors(pre, node) {
     if (node.selectors) {
         node.selectors = node.selectors.map(function (selector) {
@@ -38,10 +37,12 @@ function processBreakpoint(breakPoint, css) {
     });
 }
 
-function processAll(breakPoints) {
+var processAll = function processAll(breakPoints) {
     return function (css) {
         breakPoints.forEach(function (breakPoint) {
             processBreakpoint(breakPoint, css);
         });
     };
-}
+};
+
+exports.default = processAll;

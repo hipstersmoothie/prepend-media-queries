@@ -28,10 +28,10 @@ export function processBreakpoint(breakPoint, css) {
     });
 }
 
-export default function processAll(breakPoints) {
-    return (css) => {
-        breakPoints.forEach((breakPoint) => {
-            processBreakpoint(breakPoint, css);
-        });
-    };
-}
+const processAll = breakPoints => (css) => {
+    breakPoints.forEach((breakPoint) => {
+        processBreakpoint(breakPoint, css);
+    });
+};
+
+export default processAll;
