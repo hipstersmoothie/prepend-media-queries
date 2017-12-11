@@ -15,6 +15,7 @@
   "scripts": {
     "clean": "rm -rf lib/",
     "prepublish": "npm run clean && node_modules/babel-cli/bin/babel.js src --out-dir lib",
+    "lint": "eslint src/ ",    
     "test": "ava --tap | tnyan",
     "test:watch": "ava --watch"
   },
@@ -36,6 +37,11 @@
     "babel-core": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.5.1",
     "tap-nyan": "^1.1.0"
   },
   "babel": {
@@ -49,5 +55,17 @@
   "ava": {
     "require": "babel-core/register",
     "babel": "inherit"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "indent": ["error", 4],
+      "semi": ["error", "never"],
+      "no-param-reassign": 0
+    }
   }
 }
