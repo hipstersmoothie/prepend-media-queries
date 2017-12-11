@@ -3,12 +3,12 @@ export function prependSelectors(pre, node) {
         node.selectors = node.selectors.map(selector => (
             `${pre} ${selector}`
         ));
-    } else {
+    } else if (node.selector) {
         node.selector = `${pre} ${node.selector}`;
     }
 }
 
-export function processBreakpoint(breakPoint, css) {
+export function processBreakpoint(breakPoint = {}, css) {
     if (breakPoint.includeBaseStyles) {
         css.walkRules((rule) => {
             if (rule.parent.name === 'media' && !rule.parent.params.match(/px/)) {
@@ -20,7 +20,7 @@ export function processBreakpoint(breakPoint, css) {
     }
 
     css.walkAtRules((rule) => {
-        if (rule.name.match(/^media/) && rule.params.match(breakPoint.match)) {
+        if (rule.name.match(/^media/) && breakPoint.match && rule.params.match(breakPoint.match)) {
             rule.nodes.map(node => prependSelectors(breakPoint.wrapper, node));
             rule.parent.insertBefore(rule, rule.nodes);
             rule.remove();
@@ -28,7 +28,7 @@ export function processBreakpoint(breakPoint, css) {
     });
 }
 
-const processAll = breakPoints => (css) => {
+export const processAll = (breakPoints = []) => (css) => {
     breakPoints.forEach((breakPoint) => {
         processBreakpoint(breakPoint, css);
     });

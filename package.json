@@ -15,7 +15,8 @@
   "scripts": {
     "clean": "rm -rf lib/",
     "prepublish": "npm run clean && node_modules/babel-cli/bin/babel.js src --out-dir lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava",
+    "test:watch": "ava --watch"
   },
   "main": "lib/transform.js",
   "author": "Andrew Lisowski",
@@ -30,6 +31,7 @@
     "postcss": "^6.0.14"
   },
   "devDependencies": {
+    "ava": "^0.24.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -42,5 +44,9 @@
     "plugins": [
       "add-module-exports"      
     ]
+  },
+  "ava": {
+    "require": "babel-core/register",
+    "babel": "inherit"
   }
 }

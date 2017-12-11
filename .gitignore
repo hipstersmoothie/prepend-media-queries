@@ -9,10 +9,7 @@ typings/
 /coverage
 
 # production
-/build
-transform.js
-postcss-plugin.js
-webpack-loader.js
+/lib
 
 # misc
 .DS_Store
