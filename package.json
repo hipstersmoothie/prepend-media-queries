@@ -15,7 +15,7 @@
   "scripts": {
     "clean": "rm -rf lib/",
     "prepublish": "npm run clean && node_modules/babel-cli/bin/babel.js src --out-dir lib",
-    "test": "ava",
+    "test": "ava --tap | tnyan",
     "test:watch": "ava --watch"
   },
   "main": "lib/transform.js",
@@ -35,14 +35,15 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "tap-nyan": "^1.1.0"
   },
   "babel": {
     "presets": [
       "es2015"
     ],
     "plugins": [
-      "add-module-exports"      
+      "add-module-exports"
     ]
   },
   "ava": {
