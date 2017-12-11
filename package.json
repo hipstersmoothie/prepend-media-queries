@@ -13,11 +13,11 @@
     "media-query"
   ],
   "scripts": {
-    "clean": "rm -f postcss-plugin.js transform.js webpack-loader.js",
-    "prepublish": "npm run clean && node_modules/babel-cli/bin/babel.js src --out-dir ./",
+    "clean": "rm -rf lib/",
+    "prepublish": "npm run clean && node_modules/babel-cli/bin/babel.js src --out-dir lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "main": "transform.js",
+  "main": "lib/transform.js",
   "author": "Andrew Lisowski",
   "homepage": "https://github.com/hipstersmoothie/extract-media-queries",
   "repository": "",

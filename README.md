@@ -93,7 +93,7 @@ module: {
             test: /\.css$/,
             use: [
                 {
-                    loader: 'extract-media-queries/webpack-plugin',
+                    loader: 'extract-media-queries/lib/webpack-plugin',
                     query: {
                         breakPoints: [ ... ]
                     }
@@ -119,7 +119,7 @@ If you are using `css-loader` with css modules you will need to use this loader.
 ```js
 {
     plugins: [
-        require('extract-media-queries/postcss-plugin')({
+        require('extract-media-queries/lib/postcss-plugin')({
             breakPoints: [ ... ]
         }),
     ]
