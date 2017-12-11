@@ -1,5 +1,5 @@
 {
-  "name": "extract-media-queries",
+  "name": "prepend-media-queries",
   "version": "1.0.0",
   "description": "Strips out all media queries based on user provided breakpoints and prepends all effected classes with a breakpoint specific wrapper.",
   "keywords": [
@@ -20,10 +20,10 @@
   },
   "main": "lib/transform.js",
   "author": "Andrew Lisowski",
-  "homepage": "https://github.com/hipstersmoothie/extract-media-queries",
+  "homepage": "https://github.com/hipstersmoothie/prepend-media-queries",
   "repository": "",
   "bugs": {
-    "url": "https://github.com/hipstersmoothie/extract-media-queries/issues"
+    "url": "https://github.com/hipstersmoothie/prepend-media-queries/issues"
   },
   "license": "MIT",
   "dependencies": {

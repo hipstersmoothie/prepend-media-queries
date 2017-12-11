@@ -1,11 +1,11 @@
-# extract-media-queries 
+# prepend-media-queries 
 
 Strips out all media queries based on user provided breakpoints and prepends all effected classes with a breakpoint specific wrapper. 
 
 ## Installation
 
 ```console
-$ npm i extract-media-queries --save-dev
+$ npm i prepend-media-queries --save-dev
 ```
 
 
@@ -93,7 +93,7 @@ module: {
             test: /\.css$/,
             use: [
                 {
-                    loader: 'extract-media-queries/lib/webpack-plugin',
+                    loader: 'prepend-media-queries/lib/webpack-plugin',
                     query: {
                         breakPoints: [ ... ]
                     }
@@ -119,7 +119,7 @@ If you are using `css-loader` with css modules you will need to use this loader.
 ```js
 {
     plugins: [
-        require('extract-media-queries/lib/postcss-plugin')({
+        require('prepend-media-queries/lib/postcss-plugin')({
             breakPoints: [ ... ]
         }),
     ]
