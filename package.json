@@ -1,6 +1,6 @@
 {
   "name": "prepend-media-queries",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Strips out all media queries based on user provided breakpoints and prepends all effected classes with a breakpoint specific wrapper.",
   "keywords": [
     "postcss",
