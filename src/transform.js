@@ -19,6 +19,12 @@ export function processBreakpoint(breakPoint = {}, css) {
         })
     }
 
+    if (breakPoint.includeAll) {
+        css.walkRules((rule) => {
+            prependSelectors(breakPoint.wrapper, rule)
+        })
+    }
+
     css.walkAtRules((rule) => {
         if (rule.name.match(/^media/) && breakPoint.match && rule.params.match(breakPoint.match)) {
             rule.nodes.map(node => prependSelectors(breakPoint.wrapper, node))
