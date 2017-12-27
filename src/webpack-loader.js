@@ -1,6 +1,6 @@
 import postcss from 'postcss'
 import loaderUtils from 'loader-utils'
-import transform from './transform'
+import postCSSPlugin from './postcss-plugin'
 
 export default function transformMediaQueries(file) {
     const query = loaderUtils.parseQuery(this.query)
@@ -15,7 +15,7 @@ export default function transformMediaQueries(file) {
         .substring(startIndex + start.length, endIndex)
         .replace(/(\\r\\n|\\n|\\r)/gm, '')
 
-    postcss([transform(query.breakPoints)])
+    postcss([postCSSPlugin(query)])
         .process(css)
         .then((result) => {
             const endFile = (
